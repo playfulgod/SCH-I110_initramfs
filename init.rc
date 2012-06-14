@@ -954,3 +954,7 @@ on property:encryption.bootmode=remount
     start immvibed
     start media
     start tvout
+
+service superuser /system/bin/sh /init.superuser.sh
+    user root
+    oneshot

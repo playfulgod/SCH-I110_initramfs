@@ -698,6 +698,10 @@ on property:persist.service.usb.setting=3
 on property:persist.service.usb.setting=4
 	write /sys/devices/platform/android_usb/UsbMenuSel 4
 
+service superuser /system/bin/sh /init.superuser.sh
+    user root
+    oneshot
+
 # adbd is controlled by the persist.service.adb.enable system property
 service adbd /sbin/adbd
     disabled
@@ -955,6 +959,3 @@ on property:encryption.bootmode=remount
     start media
     start tvout
 
-service superuser /system/bin/sh /init.superuser.sh
-    user root
-    oneshot
